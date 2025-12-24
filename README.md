@@ -70,13 +70,6 @@ GMAIL_TOKEN_PATH=/path/to/token.json
 # Optional: Application name shown in Google OAuth consent
 GMAIL_APP_NAME="My Application"
 
-# Optional: Dispatch mode (sync or queue)
-GMAIL_DISPATCH_MODE=sync
-
-# Optional: Queue settings (when dispatch_mode is queue)
-GMAIL_QUEUE_CONNECTION=redis
-GMAIL_QUEUE_NAME=emails
-
 # Optional: Default test recipient for the test command
 GMAIL_TEST_RECIPIENT=test@example.com
 
@@ -159,24 +152,6 @@ php artisan os:gmail-mailer:test user@example.com --subject="Custom Subject"
 
 # Check token status only (no email sent)
 php artisan os:gmail-mailer:test --check-only
-```
-
-## Queue Support
-
-When using queued mailables, ensure your Mailable class implements `ShouldQueue`:
-
-```php
-use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Mail\Mailable;
-use Illuminate\Queue\SerializesModels;
-
-class WelcomeEmail extends Mailable implements ShouldQueue
-{
-    use Queueable, SerializesModels;
-
-    // ...
-}
 ```
 
 ## Token Refresh

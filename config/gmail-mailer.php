@@ -43,29 +43,6 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Queue Configuration
-    |--------------------------------------------------------------------------
-    |
-    | Configure how emails should be dispatched when using queue.
-    |
-    | dispatch_mode: 'sync' (send immediately) or 'queue' (queue for background processing)
-    | queue_connection: The queue connection to use (null = default connection)
-    | queue_name: The queue name to use (null = default queue)
-    |
-    | Note: When dispatch_mode is 'queue', your Mailable classes should implement
-    | ShouldQueue interface, or you can use Mail::queue() instead of Mail::send().
-    |
-    */
-
-    'dispatch_mode' => env('GMAIL_DISPATCH_MODE', 'sync'),
-
-    'queue' => [
-        'connection' => env('GMAIL_QUEUE_CONNECTION'),
-        'name' => env('GMAIL_QUEUE_NAME', 'emails'),
-    ],
-
-    /*
-    |--------------------------------------------------------------------------
     | Test Email Settings
     |--------------------------------------------------------------------------
     |
