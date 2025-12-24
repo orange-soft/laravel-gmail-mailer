@@ -1,0 +1,52 @@
+{
+    "name": "orange-soft/laravel-gmail-mailer",
+    "description": "Laravel mail transport using Gmail API with OAuth2 authentication",
+    "keywords": ["laravel", "gmail", "oauth2", "mail", "mailer", "transport"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Orangesoft",
+            "email": "dev@orangesoft.my",
+            "homepage": "https://orangesoft.my"
+        }
+    ],
+    "homepage": "https://github.com/orange-soft/laravel-gmail-mailer",
+    "support": {
+        "issues": "https://github.com/orange-soft/laravel-gmail-mailer/issues",
+        "source": "https://github.com/orange-soft/laravel-gmail-mailer"
+    },
+    "require": {
+        "php": "^8.0.2",
+        "google/apiclient": "^2.15",
+        "illuminate/contracts": "^9.0|^10.0|^11.0|^12.0",
+        "illuminate/mail": "^9.0|^10.0|^11.0|^12.0",
+        "illuminate/support": "^9.0|^10.0|^11.0|^12.0",
+        "symfony/mailer": "^6.0|^7.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^7.0|^8.0|^9.0",
+        "phpunit/phpunit": "^9.0|^10.0|^11.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Orangesoft\\GmailMailer\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Orangesoft\\GmailMailer\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Orangesoft\\GmailMailer\\GmailMailerServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
