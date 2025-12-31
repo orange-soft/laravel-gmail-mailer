@@ -188,7 +188,7 @@ class GmailService
         }
 
         file_put_contents($this->tokenPath, json_encode($token));
-        chmod($this->tokenPath, 0600);
+        @chmod($this->tokenPath, 0600); // Suppress error on hosts where chmod is not permitted
     }
 
     /**
