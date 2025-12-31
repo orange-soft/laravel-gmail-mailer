@@ -44,10 +44,16 @@ class GmailOAuth2Transport extends AbstractTransport
             }
         }
 
-        // Use config defaults if from is not set
+        // Use config defaults if from address is not set
         if (empty($options['from'])) {
             $options['from'] = config('mail.from.address');
-            $options['fromName'] = config('mail.from.name');
+        }
+
+        // Config fromName takes priority if set; otherwise keep email object's name
+        // (if both are empty, Gmail will use its default "Send mail as" name)
+        $configFromName = config('mail.from.name');
+        if (!empty($configFromName)) {
+            $options['fromName'] = $configFromName;
         }
 
         // Handle CC addresses
